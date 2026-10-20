@@ -86,6 +86,7 @@ From now on you only log in as `pumplab`.
 curl -fsSL https://raw.githubusercontent.com/itskaysyoga-gif/pumpfun/main/deploy/bootstrap_user.sh -o bootstrap_user.sh
 bash bootstrap_user.sh keys
 ```
+(Private repo? Same as step 5: paste the file from GitHub's **Raw** view into `nano bootstrap_user.sh`.)
 It prints one line starting `ssh-ed25519`. Copy it, then on GitHub:
 **pumpfun repo → Settings → Deploy keys → Add deploy key** → Title `pumplab-droplet` →
 paste → **tick "Allow write access"** → Add key. (This key can only touch this one repo.)
