@@ -1,0 +1,30 @@
+{
+  "model": "opus",
+  "permissions": {
+    "allow": [
+      "Bash(uv run pytest*)",
+      "Bash(uv run python scripts/health.py*)",
+      "Bash(uv run python scripts/probe_logs.py*)",
+      "Bash(uv sync*)",
+      "Bash(git status*)",
+      "Bash(git diff*)",
+      "Bash(git log*)",
+      "Bash(systemctl --user status *)",
+      "Bash(systemctl --user is-active *)",
+      "Bash(journalctl --user *)",
+      "Bash(df -h*)",
+      "Bash(du -sh *)"
+    ],
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(**/*keypair*)",
+      "Read(**/id.json)",
+      "Read(**/*.key)",
+      "Bash(cat .env*)",
+      "Bash(sudo *)",
+      "Bash(solana-keygen*)",
+      "Bash(git push --force*)"
+    ]
+  }
+}

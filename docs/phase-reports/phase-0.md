@@ -24,5 +24,13 @@
   The sandbox that built Phase 0 cannot reach Solana RPC. Run `scripts/probe_logs.py`
   on the VM.
 
+## Update 2026-10-20 (v3)
+- Execution environment decided: DigitalOcean droplet running Claude Code, driven from
+  claude.ai/code via Remote Control. Guide: `docs/digitalocean-setup.md`.
+- Added bootstrap scripts, systemd user units (collector + hourly rollup timer),
+  `scripts/health.py`, raw-data gzip after rollup, `.claude/settings.json` (Opus default,
+  denies reading `.env`/keys), skills `/phase-run`, `/health`, `/backtest-report`, and the
+  `reviewer` subagent. 11 tests passing; scripts pass shellcheck.
+
 ## Next
-Owner: VM setup + probe (`docs/vm-setup.md` steps 1–4). Paste probe output to Claude.
+Owner: follow `docs/digitalocean-setup.md` steps 1–8, then send `/phase-run 1`.

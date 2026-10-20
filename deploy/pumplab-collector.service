@@ -1,14 +1,14 @@
+# systemd --user unit. Installed by deploy/bootstrap_user.sh into
+# ~/.config/systemd/user/. Runs without root; lingering keeps it alive after logout.
 [Unit]
 Description=pumplab collector (pump.fun event stream)
 After=network-online.target
-Wants=network-online.target
 
 [Service]
-User=pumplab
-WorkingDirectory=/home/pumplab/pumpfun
-ExecStart=/home/pumplab/.local/bin/uv run python scripts/run_collector.py
+WorkingDirectory=%h/pumpfun
+ExecStart=%h/.local/bin/uv run python scripts/run_collector.py
 Restart=always
 RestartSec=5
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=default.target

@@ -21,6 +21,15 @@ The full plan is `docs/BUILD_BRIEF.md`. Current status is in `README.md`.
   TradeEvent; never assume a flat percentage.
 - No token launching, wash trading, copy-trading private paid groups, or manipulation.
 
+## Environment
+- You run as Linux user `pumplab` on a DigitalOcean droplet (FRA1), usually driven by the
+  owner from claude.ai/code via Remote Control. No sudo. Services are `systemctl --user`.
+- Collector: `pumplab-collector.service`; rollup: `pumplab-rollup.timer`. Data in `./data`.
+- Use the skills: `/phase-run`, `/health`, `/backtest-report`; the `reviewer` subagent
+  checks money-related code and results.
+- Default model is Opus (set in `.claude/settings.json`). The owner may switch to Sonnet
+  for routine work if usage limits get tight.
+
 ## Working style
 - One phase at a time. Stop at each phase's "done when" criteria and write
   `docs/phase-reports/phase-N.md`: what was built, results with numbers, open issues.
