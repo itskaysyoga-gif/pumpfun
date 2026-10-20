@@ -1,0 +1,9 @@
+.env
+*.key
+*keypair*.json
+id.json
+data/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/

@@ -1,0 +1,14 @@
+[Unit]
+Description=pumplab collector (pump.fun event stream)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=pumplab
+WorkingDirectory=/home/pumplab/pumpfun
+ExecStart=/home/pumplab/.local/bin/uv run python scripts/run_collector.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
